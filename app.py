@@ -81,7 +81,7 @@ def home():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        if request.form['username'] == 'user' and request.form['password'] == '1234':
+        if request.form['username'] == 'Gptau' and request.form['password'] == 'User@8584':
             session['user'] = True
             return redirect('/add')
     return render_template('login.html')
@@ -90,7 +90,7 @@ def login():
 @app.route('/login2', methods=['GET', 'POST'])
 def login2():
     if request.method == 'POST':
-        if request.form['username'] == 'admin' and request.form['password'] == '1234':
+        if request.form['username'] == 'Gptad' and request.form['password'] == 'Admin@9880':
             session['user'] = True
             return redirect('/dashboard')
     return render_template('login2.html')
