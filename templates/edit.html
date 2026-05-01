@@ -29,6 +29,12 @@
             padding: 15px;
         }
     }
+
+    .required::after {
+    content: " *";
+    color: orangered;
+    font-weight: bold;
+
 </style>
 
 </head>
@@ -51,32 +57,32 @@
 
         <form method="POST">
 
-            <div class="mb-2"><label>Name As Per SSLC</label>
+            <div class="mb-2"><label class="required">Name As Per SSLC</label>
                 <input type="text" name="name" value="{{student.name}}" class="form-control" placeholder="SSLC Name" oninput="this.value = this.value.toUpperCase();" required>
             </div>
 
-            <div class="mb-2"><label>Name As Per Aadhar</label>
+            <div class="mb-2"><label class="required">Name As Per Aadhar</label>
                 <input type="text" name="names" value="{{student.names}}" class="form-control" placeholder="Aadhar Name" oninput="this.value = this.value.toUpperCase();" required>
             </div>
 
-            <div class="mb-2"><label>Aadhar Number</label>
+            <div class="mb-2"><label class="required">Aadhar Number</label>
                 <input type="text" name="anumber" value="{{student.anumber}}" class="form-control" placeholder="Aadhar Number" required>
             </div>
 
-            <div class="mb-2"><label>Name of the Mother</label>
+            <div class="mb-2"><label class="required">Name of the Mother</label>
                 <input type="text" name="mother" value="{{student.mother}}" class="form-control" placeholder="Name of the Mother" oninput="this.value = this.value.toUpperCase();" required>
             </div>
 
-            <div class="mb-2"><label>Name of the Father</label>
+            <div class="mb-2"><label class="required">Name of the Father</label>
                 <input type="text" name="father" value="{{student.father}}" class="form-control" placeholder="Name of the Father" oninput="this.value = this.value.toUpperCase();" required>
             </div>
 
-            <div class="mb-2"><label>Date of Birth</label>
+            <div class="mb-2"><label class="required">Date of Birth</label>
                 <input type="date" name="dob" value="{{student.dob}}" class="form-control" placeholder="Date of Birth" required>
             </div>
 
             <!-- Gender Dropdown -->
-            <div class="mb-2"><label>Gender</label>
+            <div class="mb-2"><label class="required">Gender</label>
                 <select name="gender" class="form-select" required>
                     <option value="">Select</option>
                     <option value="Male" {% if student.gender=='Male' %}selected{% endif %}>Male</option>
@@ -85,7 +91,7 @@
                 </select>
             </div>
 
-            <div class="mb-2"><label>Religion</label>
+            <div class="mb-2"><label class="required">Religion</label>
                 <select name="religion" class="form-select" required>
                     <option value="">Select</option>
                     <option value="Hindu" {% if student.religion=='Hindu' %}selected{% endif %}>Hindu</option>
@@ -98,7 +104,7 @@
                 </select>
             </div>
 
-            <div class="mb-2"><label>Qualifying Examination</label>
+            <div class="mb-2"><label class="required">Qualifying Examination</label>
                 <select name="qe" class="form-select" required>
                     <option value="">Select</option>
                     <option value="SSLC" {% if student.qe=='SSLC' %}selected{% endif %}>SSLC</option>
@@ -108,19 +114,19 @@
                 </select>
             </div>
 
-            <div class="mb-2"><label>Code of Native State</label>
+            <div class="mb-2"><label class="required">Code of Native State</label>
                 <input type="text" name="cons" value="{{student.cons}}" class="form-control" placeholder="Code of Native State" required>
             </div>
 
-             <div class="mb-2"><label>Code of Native District</label>
+             <div class="mb-2"><label class="required">Code of Native District</label>
                 <input type="text" name="cond" value="{{student.cond}}" class="form-control" placeholder="Code of Native District" required>
             </div>
 
-            <div class="mb-2"><label>Total No of Years Studied In Karnataka</label>
+            <div class="mb-2"><label class="required">Total No of Years Studied In Karnataka</label>
                 <input type="text" name="ysik" value="{{student.ysik}}" class="form-control" placeholder="Total No of Years Studied In Karnataka" required>
             </div>
 
-            <div class="mb-3"><label>Have You Studied In Rural Areas From 1 to 10</label>
+            <div class="mb-3"><label class="required">Have You Studied In Rural Areas From 1 to 10</label>
                 <select name="sira" class="form-select" required>
                     <option value="">Select</option>
                     <option value="Yes" {% if student.sira=='Yes' %}selected{% endif %}>Yes</option>
@@ -128,7 +134,7 @@
                 </select>
             </div>
 
-            <div class="mb-3"><label>Have You Studied In Kanada Medium From 1 to 10</label>
+            <div class="mb-3"><label class="required">Have You Studied In Kanada Medium From 1 to 10</label>
                 <select name="sikm" class="form-select" required>
                     <option value="">Select</option>
                     <option value="Yes" {% if student.sikm=='Yes' %}selected{% endif %}>Yes</option>
@@ -136,23 +142,23 @@
                 </select>
             </div>
 
-            <div class="mb-3"><label>Do You Claming Exemption From 5 Years of Study Rule</label>
-                <select name="ceys" class="form-select">
+            <div class="mb-3"><label class="required">Do You Claming Exemption From 5 Years of Study Rule</label>
+                <select name="ceys" class="form-select" required>
                     <option value="">Select</option>
                     <option value="Yes" {% if student.ceys=='Yes' %}selected{% endif %}>Yes</option>
                     <option value="No" {% if student.ceys=='No' %}selected{% endif %}>No</option>
                 </select>
             </div>
 
-            <div class="mb-3"><label>Do You Claiming SNQ Quota Benefit</label>
-                <select name="snq" class="form-select">
+            <div class="mb-3"><label class="required">Do You Claiming SNQ Quota Benefit</label>
+                <select name="snq" class="form-select" required>
                     <option value="">Select</option>
                     <option value="Yes" {% if student.snq=='Yes' %}selected{% endif %}>Yes</option>
                     <option value="No" {% if student.snq=='No' %}selected{% endif %}>No</option>
                 </select>
             </div>
 
-            <div class="mb-3"><label>Do You Claiming HydKar Quota Benefit</label>
+            <div class="mb-3"><label class="required">Do You Claiming HydKar Quota Benefit</label>
                 <select name="chk" class="form-select" required>
                     <option value="">Select</option>
                     <option value="Yes" {% if student.chk=='Yes' %}selected{% endif %}>Yes</option>
@@ -160,7 +166,7 @@
                 </select>
             </div>
 
-            <div class="mb-3"><label>Do You Claiming Special Category Benefit</label>
+            <div class="mb-3"><label class="required">Do You Claiming Special Category Benefit</label>
                 <select name="csc" class="form-select" required>
                     <option value="">Select</option>
                     <option value="Yes" {% if student.csc=='Yes' %}selected{% endif %}>Yes</option>
@@ -168,59 +174,59 @@
                 </select>
             </div>
 
-            <div class="mb-2"><label>Reserved Category Code</label>
+            <div class="mb-2"><label class="required">Reserved Category Code</label>
                 <input type="text" name="rc" value="{{student.rc}}" class="form-control" placeholder="Reserved Category" oninput="this.value = this.value.toUpperCase();" required>
             </div>
 
-            <div class="mb-2"><label>Cast Name</label>
+            <div class="mb-2"><label class="required">Cast Name</label>
                 <input type="text" name="caste" value="{{student.caste}}" class="form-control" placeholder="Name of the Cast" oninput="this.value = this.value.toUpperCase();" required>
             </div>
 
-            <div class="mb-2"><label>Annual Income</label>
+            <div class="mb-2"><label class="required">Annual Income</label>
                 <input type="text" name="income" value="{{student.income}}" class="form-control" placeholder="Annual Income" required>
             </div>
 
-            <div class="mb-2"><label>Register Number</label>
+            <div class="mb-2"><label class="required">Register Number</label>
                 <input type="text" name="rnumber" value="{{student.rnumber}}" class="form-control" placeholder="Register Number" required>
             </div>
 
-            <div class="mb-2"><label>Year Of Passing</label>
+            <div class="mb-2"><label class="required">Year Of Passing</label>
                 <input type="text" name="ypassing" value="{{student.ypassing}}" class="form-control" placeholder="Year Of Passing" required>
             </div>
 
-            <div class="mb-2"><label>Total Max Marks In all Subjects</label>
+            <div class="mb-2"><label class="required">Total Max Marks In all Subjects</label>
                 <input type="text" name="mmias" value="{{student.mmias}}" class="form-control" placeholder="Total Max Marks In all Subjects" required>
             </div>
 
-            <div class="mb-2"><label>Total Marks Obtained In All Subjects</label>
+            <div class="mb-2"><label class="required">Total Marks Obtained In All Subjects</label>
                 <input type="text" name="omias" value="{{student.omias}}" class="form-control" placeholder="Total  Marks Obtained In all Subjects" required>
             </div>
 
-            <div class="mb-2"><label>Max Marks In Science</label>
+            <div class="mb-2"><label class="required">Max Marks In Science</label>
                 <input type="text" name="mmis" value="{{student.mmis}}" class="form-control" placeholder="Max Marks In Science" required>
             </div>
 
-             <div class="mb-2"><label>Marks Obtained In Science</label>
+             <div class="mb-2"><label class="required">Marks Obtained In Science</label>
                 <input type="text" name="mois" value="{{student.mois}}" class="form-control" placeholder="Marks Obtained In Science" required>
             </div>
 
-            <div class="mb-2"><label>Max Marks In Maths</label>
+            <div class="mb-2"><label class="required">Max Marks In Maths</label>
                 <input type="text" name="mmim" value="{{student.mmim}}" class="form-control" placeholder="Max Marks In Maths" required>
             </div>
 
-            <div class="mb-2"><label>Marks Obtained In Maths</label>
+            <div class="mb-2"><label class="required">Marks Obtained In Maths</label>
                 <input type="text" name="moim" value="{{student.moim}}" class="form-control" placeholder="Marks Obtained In Maths" required>
             </div>
 
-            <div class="mb-2"><label>Max Marks In Science & Maths</label>
+            <div class="mb-2"><label class="required">Max Marks In Science & Maths</label>
                 <input type="text" name="mmism" value="{{student.mmism}}" class="form-control" placeholder="Max Marks In Science & Maths" required>
             </div>
 
-            <div class="mb-2"><label>Marks Obtained In Science & Maths</label>
+            <div class="mb-2"><label class="required">Marks Obtained In Science & Maths</label>
                 <input type="text" name="omism" value="{{student.omism}}" class="form-control" placeholder="Marks Obtained In Science & Maths" required>
             </div>
 
-            <div class="mb-2"><label>Total Percentage</label>
+            <div class="mb-2"><label class="required">Total Percentage</label>
                 <input type="text" name="percentage" value="{{student.percentage}}" class="form-control" placeholder="Percentage" required>
             </div>
 
@@ -228,12 +234,12 @@
                 <input type="tel" name="smobile" value="{{student.smobile}}" class="form-control" placeholder="Student Mobile Number">
             </div>
 
-            <div class="mb-2"><label>Parent Mobile Number</label>
+            <div class="mb-2"><label class="required">Parent Mobile Number</label>
                 <input type="tel" name="pmobile" value="{{student.pmobile}}" class="form-control" placeholder="Parent Mobile Number" required>
             </div>
 
-            <div class="mb-2"><label>Address</label>
-                <input type="text" name="address" value="{{student.address}}" class="form-control" placeholder="Address" required>
+            <div class="mb-2"><label class="required">Address</label>
+                <input type="text" name="address" value="{{student.address}}" class="form-control" placeholder="Address" oninput="this.value = this.value.toUpperCase();" required>
             </div>
 
             <div class="mb-2"><label>Email</label>
@@ -242,7 +248,7 @@
 
             <!-- Course Dropdown -->
             <div class="mb-3">
-                <select name="course" class="form-select" required>
+                <select class="required" name="course" class="form-select" required>
                     <option value="">Select Course</option>
                     <option value="Civil Engineering" {% if student.course=='Civil Engineering' %}selected{% endif %}>Civil Engineering</option>
                     <option value="Not Allotted" {% if student.course=='Not Allotted' %}selected{% endif %}>Not Allotted</option>
@@ -252,12 +258,12 @@
                 </select>
             </div>
 
-            <div class="mb-2"><label>Date Time</label>
+            <div class="mb-2"><label class="required">Date Time</label>
                 <input type="datetime-local" name="dt" value="{{student.dt}}" class="form-control" placeholder="Date & Time" required>
             </div>
 
-            <div class="mb-2"><label>Staff Details</label>
-                <input type="text" name="staff" value="{{student.staff}}" class="form-control" placeholder="Address" required>
+            <div class="mb-2"><label class="required">Staff Details</label>
+                <input type="text" name="staff" value="{{student.staff}}" class="form-control" placeholder="Address" oninput="this.value = this.value.toUpperCase();" required>
             </div>
 
             <button type="submit" class="btn btn-success w-100">Update</button>
