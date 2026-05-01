@@ -248,7 +248,7 @@
 
             <!-- Course Dropdown -->
             <div class="mb-3"><label class="required">Course</label>
-                <select class="required" name="course" class="form-select" required>
+                <select name="course" class="form-select" required>
                     <option value="">Select Course</option>
                     <option value="Not Allotted" {% if student.course=='Not Allotted' %}selected{% endif %}>Not Allotted</option>
                     <option value="Civil Engineering" {% if student.course=='Civil Engineering' %}selected{% endif %}>Civil Engineering</option>
