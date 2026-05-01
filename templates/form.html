@@ -30,6 +30,13 @@
             padding: 15px;
         }
     }
+
+    .required::after {
+    content: " *";
+    color: orangered;
+    font-weight: bold;
+
+
 </style>
 </head>
 
@@ -52,26 +59,26 @@
 
         <form method="POST">
 
-            <label>Name As Per SSLC</label><input type="text" name="name" placeholder="Enter Name As Per SSLC" class="form-control mb-3" oninput="this.value = this.value.toUpperCase();" required>
+            <label class="required">Name As Per SSLC</label><input type="text" name="name" placeholder="Enter Name As Per SSLC" class="form-control mb-3" oninput="this.value = this.value.toUpperCase();" required>
 
-            <label>Name As Per Aadhar</label><input type="text" name="names" placeholder="Enter Name As Per Aadhar" class="form-control mb-3" oninput="this.value = this.value.toUpperCase();" required>
+            <label class="required">Name As Per Aadhar</label><input type="text" name="names" placeholder="Enter Name As Per Aadhar" class="form-control mb-3" oninput="this.value = this.value.toUpperCase();" required>
 
-            <label>Aadhar Number</label><input type="text" name="anumber" placeholder="Enter Aadhar Number" class="form-control mb-3" required>
+            <label class="required">Aadhar Number</label><input type="text" name="anumber" placeholder="Enter Aadhar Number" class="form-control mb-3" required>
 
-            <label>Mother Name As Per SSLC</label><input type="text" name="mother" placeholder="Enter Mother Name" class="form-control mb-3" oninput="this.value = this.value.toUpperCase();" required>
+            <label class="required">Mother Name As Per SSLC</label><input type="text" name="mother" placeholder="Enter Mother Name" class="form-control mb-3" oninput="this.value = this.value.toUpperCase();" required>
 
-            <label>Father Name As Per SSLC</label><input type="text" name="father" placeholder="Enter Father Name" class="form-control mb-3" oninput="this.value = this.value.toUpperCase();" required>
+            <label class="required">Father Name As Per SSLC</label><input type="text" name="father" placeholder="Enter Father Name" class="form-control mb-3" oninput="this.value = this.value.toUpperCase();" required>
 
-            <label>Date Of Birth</label><input type="date" name="dob" placeholder="Select Date Of Birth" class="form-control mb-3" required>
+            <label class="required">Date Of Birth</label><input type="date" name="dob" placeholder="Select Date Of Birth" class="form-control mb-3" required>
 
-            <label>Select Gender</label><select name="gender" class="form-select mb-3" required>
+            <label class="required">Select Gender</label><select name="gender" class="form-select mb-3" required>
                 <option value="">Select</option>
                 <option>Male</option>
                 <option>Female</option>
                 <option>Other</option>
             </select>
 
-            <label>Select Religion</label><select name="religion" class="form-select mb-3" required>
+            <label class="required">Select Religion</label><select name="religion" class="form-select mb-3" required>
                 <option value="">Select</option>
                 <option>Hindu</option>
                 <option>Muslim</option>
@@ -82,7 +89,7 @@
                 <option>Others</option>
             </select>
 
-            <label>Select Qualifying Examination</label><select name="qe" class="form-select mb-3" required>
+            <label class="required">Select Qualifying Examination</label><select name="qe" class="form-select mb-3" required>
                 <option value="">Select</option>
                 <option>SSLC</option>
                 <option>CBSE</option>
@@ -90,93 +97,93 @@
                 <option>Others</option>
             </select>
 
-            <label>State Code</label><input type="text" name="cons" placeholder="Enter State Code" class="form-control mb-3" required>
+            <label class="required">State Code</label><input type="text" name="cons" placeholder="Enter State Code" class="form-control mb-3" required>
 
-             <label>District Code</label><input type="text" name="cond" placeholder="Enter District Code" class="form-control mb-3" required>
+             <label class="required">District Code</label><input type="text" name="cond" placeholder="Enter District Code" class="form-control mb-3" required>
 
-             <label>Total No of Years Studied In Karnataka</label><input type="text" name="ysik" placeholder="Enter Total No of Years Studied In Karnataka" class="form-control mb-3" required>
+             <label class="required">Total No of Years Studied In Karnataka</label><input type="text" name="ysik" placeholder="Enter Total No of Years Studied In Karnataka" class="form-control mb-3" required>
 
-             <label>Have You Studied In Rural Areas From 1 to 10</label><select name="sira" class="form-select mb-4" required>
+             <label class="required">Have You Studied In Rural Areas From 1 to 10</label><select name="sira" class="form-select mb-4" required>
                 <option value="">Select</option>
                 <option>Yes</option>
                 <option>No</option>
             </select>
 
-            <label>Have You Studied In Kanada Medium From 1 to 10</label><select name="sikm" class="form-select mb-4" required>
+            <label class="required">Have You Studied In Kanada Medium From 1 to 10</label><select name="sikm" class="form-select mb-4" required>
                 <option value="">Select</option>
                 <option>Yes</option>
                 <option>No</option>
             </select>
 
-            <label>Do You Claming Exemption From 5 Years of Study Rule</label><select name="ceys" class="form-select mb-4">
+            <label class="required">Do You Claming Exemption From 5 Years of Study Rule</label><select name="ceys" class="form-select mb-4" required>
                 <option value="">Select</option>
                 <option>Yes</option>
                 <option>No</option>
             </select>
 
-            <label>Do You Claiming SNQ Quota Benefit</label><select name="snq" class="form-select mb-4">
+            <label class="required">Do You Claiming SNQ Quota Benefit</label><select name="snq" class="form-select mb-4" required>
                 <option value="">Select</option>
                 <option>Yes</option>
                 <option>No</option>
             </select>
 
-            <label>Do You Claiming HydKar Quota Benefit</label><select name="chk" class="form-select mb-4" required>
+            <label class="required">Do You Claiming HydKar Quota Benefit</label><select name="chk" class="form-select mb-4" required>
                 <option value="">Select</option>
                 <option>Yes</option>
                 <option>No</option>
             </select>
 
-            <label>Do You Claiming Special Category Benefit</label><select name="csc" class="form-select mb-4" required>
+            <label class="required">Do You Claiming Special Category Benefit</label><select name="csc" class="form-select mb-4" required>
                 <option value="">Select</option>
                 <option>Yes</option>
                 <option>No</option>
             </select>
 
-            <label>Reserved Category</label><input type="text" name="rc" placeholder="Enter Reserved Category" class="form-control mb-3" oninput="this.value = this.value.toUpperCase();" required>
+            <label class="required">Reserved Category</label><input type="text" name="rc" placeholder="Enter Reserved Category" class="form-control mb-3" oninput="this.value = this.value.toUpperCase();" required>
 
-            <label>Cast Name</label><input type="text" name="caste" placeholder="Enter Cast Name" class="form-control mb-3" oninput="this.value = this.value.toUpperCase();" required>
+            <label class="required">Cast Name</label><input type="text" name="caste" placeholder="Enter Cast Name" class="form-control mb-3" oninput="this.value = this.value.toUpperCase();" required>
 
-            <label>Income</label><input type="text" name="income" placeholder="Enter Annual Income" class="form-control mb-3" required>
+            <label class="required">Income</label><input type="text" name="income" placeholder="Enter Annual Income" class="form-control mb-3" required>
 
-            <label>Register Number</label><input type="text" name="rnumber" placeholder="Enter Register Number" class="form-control mb-3" required>
+            <label class="required">Register Number</label><input type="text" name="rnumber" placeholder="Enter Register Number" class="form-control mb-3" required>
 
-            <label>Year Of Passing</label><input type="text" name="ypassing" placeholder="Enter Year Of Passing" class="form-control mb-3" required>
+            <label class="required">Year Of Passing</label><input type="text" name="ypassing" placeholder="Enter Year Of Passing" class="form-control mb-3" required>
 
-            <label>Max.Marks In All Subjects</label><input type="text" name="mmias" placeholder="Enter Total Max Marks In All Subjects" class="form-control mb-3" required>
+            <label class="required">Max.Marks In All Subjects</label><input type="text" name="mmias" placeholder="Enter Total Max Marks In All Subjects" class="form-control mb-3" required>
 
-            <label>Marks Obtained In All Subjects</label><input type="text" name="omias" placeholder="Enter Total  Marks Obtained In All Subjects" class="form-control mb-3" required>
+            <label class="required">Marks Obtained In All Subjects</label><input type="text" name="omias" placeholder="Enter Total  Marks Obtained In All Subjects" class="form-control mb-3" required>
 
-            <label>Max.Marks In Science</label><input type="text" name="mmis" placeholder="Enter Max Marks In Science" class="form-control mb-3" required>
+            <label class="required">Max.Marks In Science</label><input type="text" name="mmis" placeholder="Enter Max Marks In Science" class="form-control mb-3" required>
 
-            <label>Marks Obtained In Science</label><input type="text" name="mois" placeholder="Enter  Marks Obtained In Science" class="form-control mb-3" required>
+            <label class="required">Marks Obtained In Science</label><input type="text" name="mois" placeholder="Enter  Marks Obtained In Science" class="form-control mb-3" required>
 
-            <label>Max.Marks In Maths</label><input type="text" name="mmim" placeholder="Enter  Max Marks In Maths" class="form-control mb-3" required>
+            <label class="required">Max.Marks In Maths</label><input type="text" name="mmim" placeholder="Enter  Max Marks In Maths" class="form-control mb-3" required>
 
-            <label>Marks Obtained In Maths</label><input type="text" name="moim" placeholder="Enter Marks Obtained In Maths " class="form-control mb-3" required>
+            <label class="required">Marks Obtained In Maths</label><input type="text" name="moim" placeholder="Enter Marks Obtained In Maths " class="form-control mb-3" required>
 
-            <label>Max.Marks In Science & Maths</label><input type="text" name="mmism" placeholder="Enter Max Marks In Science & Maths " class="form-control mb-3" required>
+            <label class="required">Max.Marks In Science & Maths</label><input type="text" name="mmism" placeholder="Enter Max Marks In Science & Maths " class="form-control mb-3" required>
 
-            <label>Marks Obtained In Science & Maths</label><input type="text" name="omism" placeholder="Enter Marks Obtained In Science & Maths " class="form-control mb-3" required>
+            <label class="required">Marks Obtained In Science & Maths</label><input type="text" name="omism" placeholder="Enter Marks Obtained In Science & Maths " class="form-control mb-3" required>
 
-            <label>Total Percenrage</label><input type="text" name="percentage" placeholder="Enter Percentage " class="form-control mb-3" required>
+            <label class="required">Total Percenrage</label><input type="text" name="percentage" placeholder="Enter Percentage " class="form-control mb-3" required>
 
             <label>Student Mobile Number</label><input type="tel" name="smobile" placeholder="Enter Students Mobile Number " class="form-control mb-3">
 
             <label>Parent Mobile Number</label><input type="tel" name="pmobile" placeholder="Enter Students Mobile Number " class="form-control mb-3" required>
 
-            <label>Postal Address</label><input type="text" name="address" placeholder="Enter Address " class="form-control mb-3" required>
+            <label class="required">Postal Address</label><input type="text" name="address" placeholder="Enter Address " class="form-control mb-3" required>
 
             <label>Email Id</label><input type="email" name="email" placeholder="Enter Mail Id " class="form-control mb-3">
 
 
-            <label>Select Course</label><select name="course" class="form-select mb-4" required>
+            <label class="required">Select Course</label><select name="course" class="form-select mb-4" required>
                 <option value="">Select</option>
                 <option>Not Allotted</option>
             </select>
 
-            <label>Select Current Date & Time</label><input type="datetime-local" name="dt" placeholder="Select DateTime" class="form-control mb-3" required>
+            <label class="required">Select Current Date & Time</label><input type="datetime-local" name="dt" placeholder="Select DateTime" class="form-control mb-3" required>
 
-            <label>Staff Name</label><input type="text" name="staff" placeholder="Enter Staff Name" class="form-control mb-3" required>
+            <label class="required">Staff Name</label><input type="text" name="staff" placeholder="Enter Staff Name" class="form-control mb-3" oninput="this.value = this.value.toUpperCase();" required>
 
             <button type="submit" class="btn btn-success w-100">Submit</button>
 
