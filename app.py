@@ -110,10 +110,29 @@ def dashboard():
     columns = [desc[0] for desc in cur.description]
     data = [dict(zip(columns, row)) for row in rows]
 
+    # ✅ NEW: Course-wise count
+    cur.execute("""
+        SELECT course, COUNT(*) 
+        FROM students 
+        GROUP BY course
+    """)
+    stats_data = cur.fetchall()
+
+    # Convert to dictionary
+    stats = {
+        "Civil Engineering": 0,
+        "Computer Science & Engineering": 0,
+        "Electronics & Communication Engineering": 0,
+        "Mechanical Engineering": 0
+    }
+
+    for course, count in stats_data:
+        stats[course] = count
+
     cur.close()
     conn.close()
 
-    return render_template('dashboard.html', data=data)
+    return render_template('dashboard.html', data=data, stats=stats)
 
 # ADD STUDENT
 @app.route('/add', methods=['GET', 'POST'])
