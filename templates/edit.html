@@ -247,11 +247,11 @@
             </div>
 
             <!-- Course Dropdown -->
-            <div class="mb-3">
+            <div class="mb-3"><label class="required">Course</label>
                 <select class="required" name="course" class="form-select" required>
                     <option value="">Select Course</option>
-                    <option value="Civil Engineering" {% if student.course=='Civil Engineering' %}selected{% endif %}>Civil Engineering</option>
                     <option value="Not Allotted" {% if student.course=='Not Allotted' %}selected{% endif %}>Not Allotted</option>
+                    <option value="Civil Engineering" {% if student.course=='Civil Engineering' %}selected{% endif %}>Civil Engineering</option>
                     <option value="Computer Science & Engineering" {% if student.course=='Computer Science & Engineering' %}selected{% endif %}>Computer Science & Engineering</option>
                     <option value="Electronics & Communication Engineering" {% if student.course=='Electronics & Communication Engineering' %}selected{% endif %}>Electronics & Communication Engineering</option>
                     <option value="Mechanical Engineering" {% if student.course=='Mechanical Engineering' %}selected{% endif %}>Mechanical Engineering</option>
