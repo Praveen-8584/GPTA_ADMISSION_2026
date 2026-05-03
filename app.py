@@ -96,6 +96,16 @@ def login2():
             return redirect('/dashboard')
     return render_template('login2.html')
 
+# LOGIN Statistics
+@app.route('/login3', methods=['GET', 'POST'])
+def login3():
+    if request.method == 'POST':
+        if request.form['username'] == 'Gptas' and request.form['password'] == 'Stat@1234':
+            session['user'] = True
+            return redirect('/practice')
+    return render_template('login3.html')
+
+
 # DASHBOARD
 @app.route('/dashboard')
 def dashboard():
@@ -166,6 +176,37 @@ def add():
         return render_template('form.html', success=True)
 
     return render_template('form.html', success=False)
+
+# practice
+@app.route('/practice')
+def practice():
+    if 'user' not in session:
+        return redirect('/')
+
+    conn = get_db()
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT course, COUNT(*) 
+        FROM students 
+        GROUP BY course
+    """)
+    stats_data = cur.fetchall()
+
+    # Convert to dictionary
+    stats = {
+        "Civil Engineering": 0,
+        "Computer Science & Engineering": 0,
+        "Electronics & Communication Engineering": 0,
+        "Mechanical Engineering": 0
+    }
+
+    for course, count in stats_data:
+        stats[course] = count
+
+    cur.close()
+    conn.close()
+
+    return render_template('practice.html',stats=stats)
 
 # DELETE
 @app.route('/delete/<int:id>')
