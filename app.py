@@ -6,7 +6,10 @@ import tempfile
 from io import BytesIO
 
 app = Flask(__name__)
-app.secret_key = "secret123"
+app.secret_key = os.environ.get(
+    "SECRET_KEY",
+    "local-development-key"
+)
 
 # ✅ Works for BOTH local + Render
 DATABASE_URL = os.environ.get(
@@ -16,7 +19,10 @@ DATABASE_URL = os.environ.get(
 
 # DATABASE CONNECTION
 def get_db():
-    return psycopg2.connect(DATABASE_URL)
+    return psycopg2.connect(
+        DATABASE_URL,
+        connect_timeout=10
+    )
 
 # CREATE TABLE
 def init_db():
