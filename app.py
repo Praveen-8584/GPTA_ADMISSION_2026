@@ -8,22 +8,19 @@ from io import BytesIO
 app = Flask(__name__)
 app.secret_key = os.environ.get(
     "SECRET_KEY",
-    "local-development-key"
+    "local-development-only-change-this"
 )
 
-# ✅ Works for BOTH local + Render
-DATABASE_URL = os.environ.get(
-    "DATABASE_URL",
-    "postgresql://postgres:1234@localhost:5432/student_db"
-)
+# Neon PostgreSQL connection
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
-# DATABASE CONNECTION
+if not DATABASE_URL:
+    raise RuntimeError("DATABASE_URL is not configured")
+
+# Database connection
 def get_db():
-    return psycopg2.connect(
-        DATABASE_URL,
-        connect_timeout=10
-    )
-
+    return psycopg2.connect(DATABASE_URL)
+    
 # CREATE TABLE
 def init_db():
     conn = get_db()
